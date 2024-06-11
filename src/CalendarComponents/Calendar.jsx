@@ -1,7 +1,7 @@
 import React from 'react';
 import CalCell from './CalCell'
 import './Calendar.css'
-import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay} from 'date-fns'
+import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay, getYear} from 'date-fns'
 
 const weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
@@ -18,17 +18,19 @@ function Calendar(props) {
 
 
   const monthName = format(selDate, 'MMMM');
+  const curYear = getYear(selDate)
+
 
   return (
  
       <div className="calendar-container">
         <h1>Clubspot Calendar</h1>       
         <div className='grid'>
-            <CalCell>{"<<"} 2023</CalCell>
-            <CalCell>{"<"} jan</CalCell>
-            <CalCell className='month-title'>{monthName} 2024</CalCell>
-            <CalCell>{">"} mar</CalCell>
-            <CalCell>{">>"} 2025</CalCell>
+            <CalCell> {"<<"}{curYear - 1}</CalCell>
+            <CalCell>{"<"}</CalCell>
+            <CalCell className='month-title'>{monthName} {curYear}</CalCell>
+            <CalCell>{">"}</CalCell>
+            <CalCell>{curYear +1}{">>"} </CalCell>
 
             {/* DAYS TITLES */}
             {weekDays.map((day) => {
