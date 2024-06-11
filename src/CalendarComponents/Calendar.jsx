@@ -31,13 +31,16 @@ const nextYear = () => props.onChange(sub(selDate, {years: -1}))
   return (
  
       <div className="calendar-container">
-        <h1>Clubspot Calendar</h1>       
+        <div className='cal-title'>
+            <img src='https://pub-mediabox-storage.rxweb-prd.com/exhibitor/logo/exh-3d935634-c54b-4ac3-899b-bdc8376a33e2/desktop-large/3d5149ba-0d2b-4f3c-bfb9-bec14c96dbcb.png'/>
+            <h1> Calendar</h1> 
+        </div>
         <div className='grid'>
-            <CalCell onClick={prevYear}> {"<<"}{curYear - 1}</CalCell>
-            <CalCell onClick={prevMonth}>{"<"}</CalCell>
+            <CalCell className="clickable" onClick={prevYear}> {"<<"}{curYear - 1}</CalCell>
+            <CalCell className="clickable" onClick={prevMonth}>{"<"}</CalCell>
             <CalCell className='month-title'>{monthName} {curYear}</CalCell>
-            <CalCell onClick={nextMonth}>{">"}</CalCell>
-            <CalCell onClick={nextYear}>{curYear +1}{">>"} </CalCell>
+            <CalCell className="clickable" onClick={nextMonth}>{">"}</CalCell>
+            <CalCell className="clickable" onClick={nextYear}>{curYear +1}{">>"} </CalCell>
 
             {/* DAYS TITLES */}
             {weekDays.map((day) => {
@@ -55,7 +58,7 @@ const nextYear = () => props.onChange(sub(selDate, {years: -1}))
             {Array.from({ length: daysInMonth }, (_, index) => {
               const dayNum = index + 1;
               return (
-                  <CalCell key={index} date={new Date(selDate.getFullYear(), selDate.getMonth(), dayNum)}>
+                  <CalCell key={index} className="clickable" date={new Date(selDate.getFullYear(), selDate.getMonth(), dayNum)}>
                       {dayNum}
                   </CalCell>
               );
