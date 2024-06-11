@@ -1,13 +1,24 @@
 import React from 'react';
 import CalCell from './CalCell'
 import './Calendar.css'
+import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay} from 'date-fns'
 
 const weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 
 function Calendar(props) {
   // date passed in via props.value
-  console.log(props.value)
+  // formatting days on calendar w empty spaces 
+  const selDate = props.value
+  const firstOfMonth = startOfMonth(selDate)
+  const lastOfMonth = endOfMonth(selDate)
+  const daysInMonth = getDaysInMonth(selDate)
+  const emptyStart = getDay(firstOfMonth)
+  const emptyEnd = 6 - getDay(lastOfMonth)
+
+
+  const monthName = format(selDate, 'MMMM');
+
   return (
  
       <div className="calendar-container">
@@ -15,7 +26,7 @@ function Calendar(props) {
         <div className='grid'>
             <CalCell>{"<<"} 2023</CalCell>
             <CalCell>{"<"} jan</CalCell>
-            <CalCell className='month-title'>February 2024</CalCell>
+            <CalCell className='month-title'>{monthName} 2024</CalCell>
             <CalCell>{">"} mar</CalCell>
             <CalCell>{">>"} 2025</CalCell>
 
@@ -24,11 +35,29 @@ function Calendar(props) {
                 return <CalCell key={day} className="day-titles">{day}</CalCell>;
             })}
 
+          {/* {empty cells @ start of month} */}
+          {Array.from({ length: emptyStart }, (_, index) => {
+              return (
+                  <CalCell key={index} ></CalCell>
+              );
+           })}
+
             {/* number cells */}
-            {/* Render calendar cells for days */}
-            {Array(35).fill(null).map((_, index) => (
-                <CalCell key={index} date={new Date(2024, 1, index + 1)} />
-            ))}
+            {Array.from({ length: daysInMonth }, (_, index) => {
+              const dayNum = index + 1;
+              return (
+                  <CalCell key={index} date={new Date(selDate.getFullYear(), selDate.getMonth(), dayNum)}>
+                      {dayNum}
+                  </CalCell>
+              );
+          })}
+
+           {/* {empty cells @ end of month} */}
+           {Array.from({ length: emptyEnd }, (_, index) => {
+              return (
+                  <CalCell key={index} ></CalCell>
+              );
+           })}
 
 
         </div> 
