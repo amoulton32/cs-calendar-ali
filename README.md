@@ -14,4 +14,4 @@ Currently, two official plugins are available:
 <!-- TO DO -->
 
 google fonts
-tailwind or css 
+add a today button

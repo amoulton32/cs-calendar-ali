@@ -1,7 +1,7 @@
 import React from 'react';
 import CalCell from './CalCell'
 import './Calendar.css'
-import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay, getYear} from 'date-fns'
+import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay, getYear, sub} from 'date-fns'
 
 const weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
@@ -16,9 +16,16 @@ function Calendar(props) {
   const emptyStart = getDay(firstOfMonth)
   const emptyEnd = 6 - getDay(lastOfMonth)
 
-
+// labels
   const monthName = format(selDate, 'MMMM');
   const curYear = getYear(selDate)
+
+//   button functionality
+const prevMonth = () => props.onChange(sub(selDate, {months: 1}))
+const nextMonth = () => props.onChange(sub(selDate, {months: -1}))
+const prevYear = () => props.onChange(sub(selDate, {years: 1}))
+const nextYear = () => props.onChange(sub(selDate, {years: -1}))
+
 
 
   return (
@@ -26,11 +33,11 @@ function Calendar(props) {
       <div className="calendar-container">
         <h1>Clubspot Calendar</h1>       
         <div className='grid'>
-            <CalCell> {"<<"}{curYear - 1}</CalCell>
-            <CalCell>{"<"}</CalCell>
+            <CalCell onClick={prevYear}> {"<<"}{curYear - 1}</CalCell>
+            <CalCell onClick={prevMonth}>{"<"}</CalCell>
             <CalCell className='month-title'>{monthName} {curYear}</CalCell>
-            <CalCell>{">"}</CalCell>
-            <CalCell>{curYear +1}{">>"} </CalCell>
+            <CalCell onClick={nextMonth}>{">"}</CalCell>
+            <CalCell onClick={nextYear}>{curYear +1}{">>"} </CalCell>
 
             {/* DAYS TITLES */}
             {weekDays.map((day) => {
