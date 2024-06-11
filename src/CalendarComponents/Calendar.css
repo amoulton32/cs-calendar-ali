@@ -1,0 +1,22 @@
+.calendar-container {
+    width: 400px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    /* align center */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+}
+
+.month-title {
+    grid-column: span 3;
+}
