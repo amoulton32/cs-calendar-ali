@@ -3,7 +3,20 @@
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    margin-bottom: 20px;
 }
+
+.cal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+}
+
+
 
 
 .grid {
@@ -16,10 +29,10 @@
     border-top: 1px solid #eeeeee;
     border-left: 1px solid #eeeeee;
 }
-
+/* 
 .month-title {
     grid-column: span 3;
-}
+} */
 
 .cal-title{
     display: flex;
@@ -30,7 +43,78 @@
     gap: 5px;
 }
 
+.cal-title h1{
+    font-family: "Montserrat", sans-serif; 
+    font-weight:350;
+}
+
 .cal-title img {
     height: 70px;
     width: auto;
+}
+
+
+.calendar-container button {
+    background-color: rgb(27, 50, 91);
+    border-radius: 5px;
+    color: #eeeeee;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-container button:hover {
+    background-color: rgb(144, 159, 184);
+    color: #eeeeee;
+}
+
+
+
+.calendar-container .month-buttons button{
+    background-color: transparent;
+    color: rgb(27, 50, 91);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.calendar-container .month-buttons button:hover {
+    font-weight: 600;
+}
+
+
+.year-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.year-buttons p{
+    font-weight: 300;
+    padding: 5px;
+}
+.calendar-container .year-buttons button{
+    background-color: transparent;
+    color: rgb(27, 50, 91);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.calendar-container .year-buttons button:hover {
+    font-weight: 600;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import CalCell from './CalCell'
 import './Calendar.css'
-import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay, getYear, sub} from 'date-fns'
+import { startOfMonth, endOfMonth, differenceInDays, getMonth , getDaysInMonth, format, getDay, getYear, sub, setDate} from 'date-fns'
 
 const weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
@@ -25,7 +25,13 @@ const prevMonth = () => props.onChange(sub(selDate, {months: 1}))
 const nextMonth = () => props.onChange(sub(selDate, {months: -1}))
 const prevYear = () => props.onChange(sub(selDate, {years: 1}))
 const nextYear = () => props.onChange(sub(selDate, {years: -1}))
+const handleClickDay = (dayNum) => {
+  const date = setDate(selDate, dayNum);
+  props.onChange(date);
+  console.log(date)
+};
 
+const handleToday = () => props.onChange(new Date());
 
 
   return (
@@ -33,14 +39,24 @@ const nextYear = () => props.onChange(sub(selDate, {years: -1}))
       <div className="calendar-container">
         <div className='cal-title'>
             <img src='https://pub-mediabox-storage.rxweb-prd.com/exhibitor/logo/exh-3d935634-c54b-4ac3-899b-bdc8376a33e2/desktop-large/3d5149ba-0d2b-4f3c-bfb9-bec14c96dbcb.png'/>
-            <h1> Calendar</h1> 
+            <h1> CALENDAR</h1> 
+            <button className='today-button' onClick={handleToday}>Today</button>
         </div>
+        <div className='cal-header'>
+          <h4 className='month-title'>{monthName} {curYear}</h4>
+          <div className='month-buttons'>
+            <button className="clickable" onClick={prevMonth}>{"<"}</button>
+            <button className="clickable" onClick={nextMonth}>{">"}</button>
+          </div>
+          
+        </div>
+       
         <div className='grid'>
-            <CalCell className="clickable" onClick={prevYear}> {"<<"}{curYear - 1}</CalCell>
+            {/* <CalCell className="clickable" onClick={prevYear}>{curYear - 1}</CalCell>
             <CalCell className="clickable" onClick={prevMonth}>{"<"}</CalCell>
             <CalCell className='month-title'>{monthName} {curYear}</CalCell>
             <CalCell className="clickable" onClick={nextMonth}>{">"}</CalCell>
-            <CalCell className="clickable" onClick={nextYear}>{curYear +1}{">>"} </CalCell>
+            <CalCell className="clickable" onClick={nextYear}>{curYear +1} </CalCell> */}
 
             {/* DAYS TITLES */}
             {weekDays.map((day) => {
@@ -57,9 +73,14 @@ const nextYear = () => props.onChange(sub(selDate, {years: -1}))
             {/* number cells */}
             {Array.from({ length: daysInMonth }, (_, index) => {
               const dayNum = index + 1;
+              const isSelDate = dayNum === selDate.getDate()
               return (
-                  <CalCell key={index} className="clickable" date={new Date(selDate.getFullYear(), selDate.getMonth(), dayNum)}>
-                      {dayNum}
+                  <CalCell 
+                    key={dayNum}       
+                    className={`clickable ${isSelDate ? 'selected-date' : ''}`}
+                    onClick={ () => handleClickDay(dayNum)} 
+                  >
+                    {dayNum}
                   </CalCell>
               );
           })}
@@ -73,6 +94,12 @@ const nextYear = () => props.onChange(sub(selDate, {years: -1}))
 
 
         </div> 
+        <div className='year-buttons'>
+          <button className="clickable" onClick={prevYear}>{"<<"}</button>
+          <p>Year</p>
+          <button className="clickable" onClick={nextYear}>{">>"}</button> 
+
+        </div>
       </div>
 
     
