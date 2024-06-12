@@ -13,7 +13,7 @@ events on the calendar for that day. Considering the scope of the project adding
 is currently non-functional. 
 
 Date & time data are gathered using date-fns, which provides lots of convenient tools for manipulating 
-dates in javascript, and the documentation was thorough 
+dates in javascript, and the documentation was thorough. 
 https://date-fns.org/ 
 
 
