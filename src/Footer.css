@@ -18,3 +18,12 @@
   text-align: center;
   gap: 40px;
 }
+
+.portfolio-link {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.portfolio-link:hover{
+  cursor: pointer;
+}

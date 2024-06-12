@@ -7,7 +7,14 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p>Ali Moulton </p>
+      <a
+        href="https://moultoab.wixsite.com/ali-moulton"
+        className="portfolio-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p>Ali Moulton </p>
+      </a>
       <p>
         {currentMonth} {currentYear}
       </p>
