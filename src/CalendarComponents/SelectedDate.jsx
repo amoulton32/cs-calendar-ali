@@ -1,6 +1,7 @@
 import React from "react";
 import "./SelectedDate.css";
 import { format, differenceInCalendarDays, sub, add } from "date-fns";
+import { BsInfoCircle } from "react-icons/bs";
 
 function SelectedDate(props) {
   const selDate = props.value;
@@ -27,15 +28,23 @@ function SelectedDate(props) {
     );
   };
 
+  const handleQuestion = () => {
+    alert(
+      "Questions might come up while using this calendar. Once it's fully functional there will be lots of resources to help you out!"
+    );
+  };
+
   return (
     <div className="selecteddate-container">
       <div className="today-title">
-        <h1>Selected Date:</h1>
         <h3>{displayDate}</h3>
       </div>
       <div className="selected-list">
         <h4>Nothing planned yet</h4>
         <button onClick={handleAddTask}>Add tasks</button>
+      </div>
+      <div className="help">
+        <BsInfoCircle onClick={handleQuestion} className="clickable" />
       </div>
     </div>
   );

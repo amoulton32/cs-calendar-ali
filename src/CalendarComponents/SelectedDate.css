@@ -12,26 +12,15 @@
   justify-content: center;
   align-items: center;
   color: rgb(27, 50, 91);
-  flex-direction: column;
-  gap: 0;
 }
 
-.today-title h1,
+
 .today-title h3 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
-}
-
-.today-title h1 {
-  font-size: 1.5rem;
+  padding: 7px;
   padding-top: 30px;
-}
-
-.today-title h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding-top: 10px;
 }
 
 .selected-list {
@@ -73,6 +62,16 @@
   background-color: #eeeeee;
   color: rgb(27, 50, 91);
   border-color: rgb(27, 50, 91);
+}
+
+.help {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  padding-top: 15px;;
+  color: rgb(27, 50, 91);
+  font-size: large;
 }
 
 @media (max-width: 768px) {

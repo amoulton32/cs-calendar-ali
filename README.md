@@ -1,17 +1,20 @@
-# React + Vite
+# CLUBSPOT CALENDAR
+Created by Ali Moulton for Clubspot Coding Assesmeny 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Details: -->
 
-Currently, two official plugins are available:
+This project was created using React working in Vite. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Currently, the calendar allows defaults to today's date 
+with options to change the date, month, or year with a few quick clicks. 
+
+On the right there is a view of the currently selected date, which would ideally show the 
+events on the calendar for that day. Considering the scope of the project adding events 
+is currently non-functional. 
+
+Date & time data was gathered using date-fns, which provides lots of convenient tools for manipulating 
+daes in javascript, and the documentation was thorough 
+ <!--https://date-fns.org/  -->
 
 
-
-
-
-<!-- TO DO -->
-
-google fonts
-add a today button
+ Styling was done entirely in CSS, no tailwind, etc.
