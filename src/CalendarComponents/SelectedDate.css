@@ -14,7 +14,6 @@
   color: rgb(27, 50, 91);
 }
 
-
 .today-title h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -69,7 +68,7 @@
   justify-content: center;
   align-items: center;
   padding: 5px;
-  padding-top: 15px;;
+  padding-top: 15px;
   color: rgb(27, 50, 91);
   font-size: large;
 }
