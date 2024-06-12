@@ -14,7 +14,7 @@ is currently non-functional.
 
 Date & time data are gathered using date-fns, which provides lots of convenient tools for manipulating 
 dates in javascript, and the documentation was thorough 
-# https://date-fns.org/ 
+https://date-fns.org/ 
 
 
  Styling was done entirely in CSS, no tailwind, etc.
