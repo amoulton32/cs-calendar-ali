@@ -1,139 +1,82 @@
-.selecteddate-container{
-    width: 250px;
-    height: 400px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 5px;
-    margin-bottom: 100px;
-}
-
-.today-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(27, 50, 91);
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.today-title h1{
-    font-family: "Montserrat", sans-serif; 
-    font-size: 1.5rem;
-    font-weight:400;
-    padding-top: 30px;
-    margin: 0;
-}
-
-.today-title h3{
-    font-family: "Montserrat", sans-serif; 
-    font-size: 1.2rem;
-    font-weight:600;
-    padding-top: 10px;
-    margin: 0;
-}
-
-
-.selected-list{
-    margin-top: 25px;
-    width: 90%;
-    height: 60%;
-    padding: 10px;
-    padding-top: 0;
-    background-color: rgb(27, 50, 91);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.selected-list h4{
-    font-family: "Montserrat", sans-serif; 
-    font-size: 1rem;
-    font-weight: 300;
-    color: #eeeeee;
-}
-
-
 .selecteddate-container {
-    width: 250px;
-    height: 400px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 5px;
+  width: 250px;
+  height: 400px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 100px;
 }
 
 .today-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(27, 50, 91);
-    flex-direction: column;
-    gap: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(27, 50, 91);
+  flex-direction: column;
+  gap: 0;
+}
+
+.today-title h1,
+.today-title h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0;
 }
 
 .today-title h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding-top: 30px;
-    margin: 0;
+  font-size: 1.5rem;
+  padding-top: 30px;
 }
 
 .today-title h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding-top: 10px;
-    margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 10px;
 }
 
 .selected-list {
-    margin-top: 25px;
-    width: 90%;
-    height: 60%;
-    padding: 10px;
-    padding-top: 0;
-    background-color: rgb(27, 50, 91);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-top: 25px;
+  width: 90%;
+  height: 60%;
+  padding: 10px;
+  padding-top: 0;
+  background-color: rgb(27, 50, 91);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .selected-list h4 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #eeeeee;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #eeeeee;
 }
 
 .selected-list button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: rgb(27, 50, 91);
-    color: #eeeeee;
-    border: 1px solid #eeeeee;
-    border-radius: 5px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: rgb(27, 50, 91);
+  color: #eeeeee;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .selected-list button:hover {
-    background-color: #eeeeee;
-    color: rgb(27, 50, 91);
-    border-color: rgb(27, 50, 91);
+  background-color: #eeeeee;
+  color: rgb(27, 50, 91);
+  border-color: rgb(27, 50, 91);
 }
 
-
 @media (max-width: 768px) {
-    .selecteddate-container{
-        width: 400px;
-    }
+  .selecteddate-container {
+    width: 400px;
   }
-  
+}
