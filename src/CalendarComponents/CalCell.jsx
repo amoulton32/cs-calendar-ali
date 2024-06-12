@@ -6,8 +6,9 @@ function CalCell(props) {
     return (
         <div 
             className={`cell-block ${props.className}`} 
-            onClick={props.onClick}>
-                {props.children}
+            onClick={props.onClick}
+        >
+            {props.children}
         </div>
     );
 }

@@ -18,3 +18,14 @@
     background-color: rgba(219, 219, 235, 0.3);
     cursor: pointer;
 }
+
+.selected-date{
+    background-color: rgb(27, 50, 91);
+    color: #eeeeee;
+    border-radius: 50%;
+}
+
+
+.selected-date:hover{
+    background-color: rgb(27, 50, 91);
+}
