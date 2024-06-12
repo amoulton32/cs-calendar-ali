@@ -7,6 +7,7 @@ import {
   getDaysInMonth,
   format,
   getDay,
+  getMonth,
   getYear,
   sub,
   add,
@@ -22,6 +23,8 @@ function Calendar(props) {
   const daysInMonth = getDaysInMonth(selDate);
   const emptyStart = getDay(firstOfMonth);
   const emptyEnd = 6 - getDay(lastOfMonth);
+  const preDays = getDaysInMonth(sub(selDate, { months: 1 }));
+  const preStart = preDays - emptyStart + 1;
 
   // labels
   const monthName = format(selDate, "MMMM");
@@ -32,10 +35,20 @@ function Calendar(props) {
   const nextMonth = () => props.onChange(sub(selDate, { months: -1 }));
   const prevYear = () => props.onChange(sub(selDate, { years: 1 }));
   const nextYear = () => props.onChange(add(selDate, { years: 1 }));
-  
+
   const handleClickDay = (dayNum) => {
     const date = setDate(selDate, dayNum);
     props.onChange(date);
+  };
+
+  const handleClickPrev = (dayNum) => {
+    const prevMonthDate = setDate(sub(selDate, { months: 1 }), dayNum);
+    props.onChange(prevMonthDate);
+  };
+
+  const handleClickNext = (dayNum) => {
+    const nextMonthDate = setDate(add(selDate, { months: 1 }), dayNum);
+    props.onChange(nextMonthDate);
   };
 
   const handleToday = () => props.onChange(new Date());
@@ -73,9 +86,17 @@ function Calendar(props) {
           );
         })}
 
-        {/* {empty cells @ start of month} */}
+        {/* {cells @ start of month (prev month)} */}
         {Array.from({ length: emptyStart }, (_, index) => {
-          return <CalCell key={index}></CalCell>;
+          return (
+            <CalCell
+              key={index}
+              className={"pre-start"}
+              onClick={() => handleClickPrev(preStart + index)}
+            >
+              {preStart + index}
+            </CalCell>
+          );
         })}
 
         {/* Date number cells */}
@@ -93,9 +114,17 @@ function Calendar(props) {
           );
         })}
 
-        {/* {empty cells @ end of month} */}
+        {/* {cells @ end of month} */}
         {Array.from({ length: emptyEnd }, (_, index) => {
-          return <CalCell key={index}></CalCell>;
+          return (
+            <CalCell
+              key={index}
+              className={"post-end"}
+              onClick={() => handleClickNext(index + 1)}
+            >
+              {index + 1}
+            </CalCell>
+          );
         })}
       </div>
 

@@ -18,3 +18,4 @@ https://date-fns.org/
 
 
  Styling was done entirely in CSS, no tailwind, etc.
+ The design is responsive with browser size. 

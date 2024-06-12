@@ -78,3 +78,10 @@
     width: 400px;
   }
 }
+
+@media (max-width: 480px) {
+  .selecteddate-container {
+    width: 350px;
+    margin-bottom: 60px;
+  }
+}
